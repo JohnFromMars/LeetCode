@@ -4,28 +4,28 @@ public class Solution7 {
 	public int reverse(int x) {
 
 		String number = String.valueOf(x);
-		String reverseNumber = "";
+		StringBuilder reverseNumber = new StringBuilder();
 		int result = 0;
 
 		// for positive number
 		if (x >= 0) {
 
 			for (int i = number.length() - 1; i >= 0; i--) {
-				reverseNumber = reverseNumber + number.charAt(i);
+				reverseNumber.append(number.charAt(i));
 			}
 
 			// for negative number
 		} else {
 
-			reverseNumber = reverseNumber + "-";
+			reverseNumber.append("-");
 
 			for (int i = number.length() - 1; i > 0; i--) {
-				reverseNumber = reverseNumber + number.charAt(i);
+				reverseNumber.append(number.charAt(i));
 			}
 
 		}
 
-		result = Integer.valueOf(reverseNumber);
+		result = Integer.valueOf(reverseNumber.toString());
 		return result;
 	}
 }
