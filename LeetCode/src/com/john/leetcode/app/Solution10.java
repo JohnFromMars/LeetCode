@@ -16,13 +16,14 @@ public class Solution10 {
 
 			// when inputs are not null
 		} else {
+
 			boolean[][] dp = new boolean[s.length() + 1][p.length() + 1];
 
 			// initial start is true
 			dp[0][0] = true;
 
 			// initial dp[0][i]
-			for (int i = 1; i < p.length(); i++) {
+			for (int i = 1; i < p.length() + 1; i++) {
 
 				if (p.charAt(i - 1) == '*') {
 					if (dp[0][i - 1] || (i > 1 && dp[0][i - 2])) {
@@ -31,8 +32,8 @@ public class Solution10 {
 				}
 			}
 
-			for (int i = 1; i < s.length(); i++) {
-				for (int j = 1; j < p.length(); j++) {
+			for (int i = 1; i < s.length() + 1; i++) {
+				for (int j = 1; j < p.length() + 1; j++) {
 
 					if (s.charAt(i - 1) == p.charAt(j - 1) || p.charAt(j - 1) == '.') {
 						dp[i][j] = dp[i - 1][j - 1];
