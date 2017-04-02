@@ -31,8 +31,14 @@ public class Solution8 {
 			int digit = str.charAt(index) - '0';
 			System.out.println("digit=" + digit);
 
-			// 5. over flow
-			if (result > Integer.MAX_VALUE / 10 || result == Integer.MAX_VALUE && digit > Integer.MAX_VALUE % 10) {
+			// 5.check if character is numeric
+			if (digit < 0 || digit > 9) {
+				break;
+			}
+
+			// 6. number is over flow
+			if (result > Integer.MAX_VALUE / 10 || (result == Integer.MAX_VALUE && digit > Integer.MAX_VALUE % 10)) {
+
 				if (sighn == 1) {
 					return Integer.MAX_VALUE;
 				} else {
