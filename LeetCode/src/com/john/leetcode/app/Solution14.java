@@ -6,7 +6,7 @@ package com.john.leetcode.app;
  * @author wanyy257
  *
  */
-public class Solution13 {
+public class Solution14 {
 	public String longestCommonPrefix(String[] strs) {
 		String result = "";
 
