@@ -1,5 +1,13 @@
 package com.john.leetcode.app;
 
+/**
+ * 19. Remove Nth Node From End of List. Given a linked list, remove the nth
+ * node from the end of list and return its head.
+ * 
+ * @author user
+ *
+ */
+
 public class Solution19 {
 
 	public class ListNode {
@@ -12,10 +20,10 @@ public class Solution19 {
 	}
 
 	public ListNode removeNthFromEnd(ListNode head, int n) {
-		
+
 		ListNode result = new ListNode(0);
 		ListNode listNode = result;
-		
+
 		int target = n;
 
 		while (head.next != null) {
