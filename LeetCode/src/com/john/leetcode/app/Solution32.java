@@ -35,7 +35,6 @@ public class Solution32 {
 		}
 
 		return max;
-
 	}
 
 	public int longestValidParentheses(String s) {
