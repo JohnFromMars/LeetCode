@@ -26,8 +26,12 @@ public class Solution34 {
 
 			if (target == nums[mid]) {
 				if (nums[lo] == nums[hi]) {
-					return result = addToArray(lo, hi);
-				} else {
+					result[0] = lo;
+					result[1] = hi;
+					return result;
+				} else if (nums[lo] < target) {
+					lo++;
+				} else if (nums[hi] > target) {
 					hi--;
 				}
 
