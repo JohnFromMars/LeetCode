@@ -53,4 +53,21 @@ public class Solution39 {
 			}
 		}
 	}
+
+	private void backtrack2(List<List<Integer>> list, List<Integer> tempList, int[] nums, int remain, int start) {
+
+		if (remain < 0) {
+			return;
+
+		} else if (remain == 0) {
+			list.add(tempList);
+
+		} else {
+			for (int i = start; i < nums.length; i++) {
+				tempList.add(nums[i]);
+				System.out.println("tempList=" + tempList);
+				backtrack2(list, tempList, nums, remain - nums[i], i);
+			}
+		}
+	}
 }
