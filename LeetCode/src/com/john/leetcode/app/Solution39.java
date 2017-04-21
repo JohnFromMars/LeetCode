@@ -1,5 +1,6 @@
 package com.john.leetcode.app;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -24,16 +25,32 @@ public class Solution39 {
 		List<List<Integer>> result = new LinkedList<>();
 
 		Arrays.sort(candidates);// sort list
-		System.out.println("after sort=" + candidates);
- 
-		for (int i = 0; i < candidates.length; i++) {
-			for (int j = i + 1; j < candidates.length; j++) {
 
-			}
-
-		}
+		backtrack(result, new LinkedList<>(), candidates, target, 0);
 
 		return result;
 	}
 
+	private void backtrack(List<List<Integer>> list, List<Integer> tempList, int[] nums, int remain, int start) {
+
+		if (remain < 0) {
+			System.out.println("return");
+			return;
+		}
+
+		else if (remain == 0) {
+			System.out.println("add tempList=" + tempList);
+			list.add(new ArrayList<>(tempList));
+		}
+
+		else {
+			for (int i = start; i < nums.length; i++) {
+				System.out.println("add nums[i]=" + nums[i] + " to temp list");
+				tempList.add(nums[i]);
+				// not i + 1 because we can reuse same elements
+				backtrack(list, tempList, nums, remain - nums[i], i);
+				tempList.remove(tempList.size() - 1);
+			}
+		}
+	}
 }
