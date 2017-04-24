@@ -33,23 +33,36 @@ public class Solution43 {
 				int p2 = i + j + 1;
 
 				System.out.println("pos[p2]=" + pos[p2]);
-				
+
 				int sum = multiple + pos[p2];
 				System.out.println("sum=" + sum);
-				
+
 				pos[p1] = pos[p1] + (sum / 10);
-				pos[p2] = pos[p2] + (sum % 10);
+				pos[p2] = (sum % 10);
+
+				System.out.printf("temp sum = ");
+				for (int a = 0; a < pos.length; a++) {
+					System.out.print(pos[a]);
+				}
+
+				System.out.println();
 			}
 		}
 
 		StringBuilder sBuilder = new StringBuilder();
 
 		for (int c : pos) {
-			if(!(sBuilder.length() == 0 && c == 0)){
+			if (!(sBuilder.length() == 0 && c == 0)) {
+				System.out.println("c=" + c);
 				sBuilder.append(c);
 			}
 		}
 
-		return sBuilder.toString();
+		if (sBuilder.length() == 0) {
+			return "0";
+		} else {
+			return sBuilder.toString();
+		}
+
 	}
 }
