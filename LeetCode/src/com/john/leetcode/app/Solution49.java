@@ -1,5 +1,6 @@
 package com.john.leetcode.app;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -23,33 +24,33 @@ public class Solution49 {
 			return null;
 
 		} else {
-			List<List<String>> result = new LinkedList<>();
-			Map<Integer, List<String>> collect = new HashMap<>();
+
+			Map<String, List<String>> collect = new HashMap<>();
+
+			Arrays.sort(strs);
 
 			for (int i = 0; i < strs.length; i++) {
-				Integer integer = new Integer(1);
+				char[] characters = strs[i].toCharArray();
+				Arrays.sort(characters);
 
-				for (int j = 0; j < strs[i].length(); j++) {
-					integer = integer * strs[i].charAt(j);
-				}
+				String ketString = String.valueOf(characters);
+				System.out.println("ketString=" + ketString);
 
-				if (collect.containsKey(integer)) {
-					List<String> list = collect.get(integer);
+				if (collect.containsKey(ketString)) {
+					System.out.println("find key");
+					List<String> list = collect.get(ketString);
 					list.add(strs[i]);
-					collect.put(integer, list);
+					collect.put(ketString, list);
 
 				} else {
+					System.out.println("not found");
 					List<String> list = new LinkedList<>();
 					list.add(strs[i]);
-					collect.put(integer, list);
+					collect.put(ketString, list);
 				}
 			}
 
-			for (List<String> c : collect.values()) {
-				result.add(c);
-			}
-
-			return result;
+			return new LinkedList<>(collect.values());
 		}
 
 	}
