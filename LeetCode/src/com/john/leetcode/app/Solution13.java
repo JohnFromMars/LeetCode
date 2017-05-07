@@ -16,6 +16,7 @@ public class Solution13 {
 			char c = s.charAt(index);
 
 			switch (c) {
+			// 1
 			case 'I':
 
 				if (result >= 5) {
@@ -26,10 +27,12 @@ public class Solution13 {
 
 				break;
 
+			// 5
 			case 'V':
 				result = result + 5;
 				break;
 
+			// 10
 			case 'X':
 				if (result >= 50) {
 					result = result - 10;

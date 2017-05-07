@@ -37,7 +37,6 @@ public class Solution19 {
 			result = result.next;
 			head = head.next;
 		}
-
 		return listNode.next;
 	}
 
