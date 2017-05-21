@@ -11,5 +11,34 @@ package com.john.leetcode.app;
  *
  */
 public class Solution53 {
+	public int maxSubArray(int[] nums) {
+		int result = Integer.MIN_VALUE;
+		int left = 0;
+		int right = nums.length - 1;
 
+		while (left < right) {
+
+			int temp = sumArray(nums, left, right);
+			result = Math.max(result, temp);
+
+			if (nums[left] < nums[right]) {
+				left++;
+
+			} else {
+				right--;
+			}
+		}
+
+		return result;
+	}
+
+	private int sumArray(int[] nums, int left, int right) {
+
+		int result = 0;
+
+		for (int i = left; i <= right; i++) {
+			result = result + nums[i];
+		}
+		return result;
+	}
 }
