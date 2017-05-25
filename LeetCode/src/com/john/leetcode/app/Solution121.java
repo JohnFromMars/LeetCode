@@ -17,6 +17,7 @@ package com.john.leetcode.app;
  * 
  * In this case, no transaction is done, i.e. max profit = 0.
  * 
+ * solution 53 is same algorithm
  * 
  * @author wanyy257
  *
@@ -24,14 +25,17 @@ package com.john.leetcode.app;
 public class Solution121 {
 
 	public int maxProfit(int[] prices) {
-		int maxProfit = Integer.MIN_VALUE;
-		int currentPrice = prices[0];
+		int maxProfit = 0;
+		int maxCur = 0;
 
 		for (int i = 1; i < prices.length; i++) {
-
-			
+			System.out.println("prices[i] = " + prices[i] + ", prices[i-1] = " + prices[i - 1]);
+			maxCur = Math.max(0, maxCur = maxCur + prices[i] - prices[i - 1]);
+			System.out.println("maxProfit=" + maxProfit + ", maxCur=" + maxCur);
+			maxProfit = Math.max(maxCur, maxProfit);
+			System.out.println("final maxprofit=" + maxProfit);
 		}
 
-		return 0;
+		return maxProfit;
 	}
 }
