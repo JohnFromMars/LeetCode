@@ -1,7 +1,5 @@
 package com.john.leetcode.app;
 
-import javax.management.RuntimeErrorException;
-
 public class Exam {
 	int x = 200;
 	static{
@@ -11,6 +9,7 @@ public class Exam {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 //		System.out.println(test(1));
+		System.out.println("Hello World");
 		String s = run("11");
 		System.out.println(s);
 		
@@ -34,7 +33,6 @@ public class Exam {
 			System.out.println(1);
 		}
 		
-		return s;
 	}
 	
 }
