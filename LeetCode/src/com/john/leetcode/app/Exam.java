@@ -33,5 +33,4 @@ public class Exam {
 			System.out.println(1);
 		}
 	}
-	
 }
