@@ -32,7 +32,6 @@ public class Exam {
 		}finally{
 			System.out.println(1);
 		}
-		
 	}
 	
 }
